@@ -3,7 +3,7 @@ Key Value Parser
 
 The primary purpose of `KeyValueParser` is to have a
 simple class to be able to parse command line arguments
-which are all formated as `key:value`.
+which are all formated as `key=value`.
 
 For example you could call a script like this:
 
@@ -65,12 +65,12 @@ options[:broadcast] == false
 options[:running] == true
 ```
 
-If you don't want to cast values, you can use the second of
+If you don't want to cast values, you can use the second argument of
 `KeyValueParse#parse` which is a list of options. Just set 
 `typecast_values` to `false`.
 
 ```ruby
-parser = KeyValueparser.new({}, {typecast_values: false})
+parser = KeyValueParser.new({}, {typecast_values: false})
 ```
 
 Typecasting is still very basic and will most likely evolve,
@@ -81,7 +81,7 @@ Normalized Keys
 
 Keys of the resulting `Hash` are normalized. Dash in the middle
 of words are replaced by underscores. Double dash in front of a 
-word are also removed. It allows you to have unix style dash 
+word are also removed. It allows you to have unix style double dash 
 arguments.
 
 ```ruby
@@ -92,7 +92,7 @@ options[:user_name] == 'bob'
 
 Because of the way command line arguments are created for `ARGV`
 you can even surround an argument with quotes in order to have
-spaces in the arguments value.
+spaces in the argument's value.
 
 There is nothing yet for unix style single dash arguments.
 I could remove the dash and treat it like a single letter key,
