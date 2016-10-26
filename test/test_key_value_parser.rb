@@ -32,8 +32,20 @@ class TestKeyValueParser < Minitest::Test
   end
 
   def test_integers_are_typecasted
-    kvs = ['machine:coconut', 'size:11', 'negative:-5']
-    expected = {machine: 'coconut', size: 11, negative: -5}
+    kvs = ['machine:1coconut', 'size:11', 'negative:-5']
+    expected = {machine: '1coconut', size: 11, negative: -5}
+    assert_equal expected, @parser.parse(kvs) 
+  end
+
+  def test_floats_are_typecasted
+    kvs = [
+      'machine:5.0coconut', 
+      'float1:99.99', 'float2:-5.0', 'float3:.4'
+    ]
+    expected = {
+      machine: '5.0coconut', 
+      float1: 99.99, float2: -5.0, float3: 0.4
+    }
     assert_equal expected, @parser.parse(kvs) 
   end
 
