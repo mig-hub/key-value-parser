@@ -53,7 +53,7 @@ Typecasted Values
 -----------------
 
 As you may have noticed in previous examples, values are
-typecasted. So far it does typecast integers and booleans.
+typecasted. So far it does typecast integers, floats and booleans.
 Also if you don't give a value, the parser will interpret
 it as a flag and set it to `true`.
 

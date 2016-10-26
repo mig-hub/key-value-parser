@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.licenses = ['MIT']
 
   s.name = 'key-value-parser'
-  s.version = '0.0.1'
+  s.version = '0.0.2'
   s.summary = "Key Value Parser"
   s.description = "KeyValueParser parses arrays of string options like 'machine=coconut'. It is mainly done for parsing ARGV, but can be used for other things."
 
