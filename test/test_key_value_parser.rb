@@ -32,8 +32,8 @@ class TestKeyValueParser < Minitest::Test
   end
 
   def test_integers_are_typecasted
-    kvs = ['machine:coconut', 'size:11']
-    expected = {machine: 'coconut', size: 11}
+    kvs = ['machine:coconut', 'size:11', 'negative:-5']
+    expected = {machine: 'coconut', size: 11, negative: -5}
     assert_equal expected, @parser.parse(kvs) 
   end
 

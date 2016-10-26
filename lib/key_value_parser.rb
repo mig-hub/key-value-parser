@@ -43,7 +43,7 @@ class KeyValueParser
       v = true
     elsif v=='false'
       v = false
-    elsif v=~/^\d+$/
+    elsif v=~/^-?\d+$/
       v = v.to_i
     else
       v
