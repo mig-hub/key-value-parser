@@ -1,5 +1,7 @@
 class KeyValueParser
 
+  VERSION = '0.0.2'
+
   def initialize defaults={}, options={}
     @defaults = defaults
     @options = {
